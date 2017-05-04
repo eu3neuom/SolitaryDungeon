@@ -43,4 +43,4 @@ If you would like to contribute to this project by modifying/adding to the progr
   
 ## Contact
 
-You can contact me by email: cezar.p.petriuc@gmail.com
+You can contact me by email: cezar.c.petriuc@gmail.com
