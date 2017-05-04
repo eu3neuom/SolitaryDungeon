@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace SolitaryDungeon
 {
-    class Program
+    class Level
     {
-        static void Main(string[] args)
-        {
-            Console.ReadKey();
-        }
+
     }
 }
