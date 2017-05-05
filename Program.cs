@@ -10,6 +10,8 @@ namespace SolitaryDungeon
     {
         static void Main(string[] args)
         {
+            Level lvl1 = new Level(20, 20);
+            lvl1.Draw();
             Console.ReadKey();
         }
     }

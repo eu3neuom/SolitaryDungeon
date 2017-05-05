@@ -8,15 +8,16 @@ namespace SolitaryDungeon
 {
     class Tile
     {
-        protected Tile(char Sprite, bool IsSolid)
+        protected Tile(char Sprite, ConsoleColor Color, bool IsSolid)
         {
             _sprite = Sprite;
+            _color = Color;
             _isSolid = IsSolid;
         }
 
         public static Tile Empty()
         {
-            return new Tile(' ', false);
+            return new Tile(' ', Console.ForegroundColor, false);
         }
 
         public bool IsSolid
@@ -35,11 +36,14 @@ namespace SolitaryDungeon
 
         public void Draw()
         {
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = _color;
             Console.Write(_sprite);
+            Console.ForegroundColor = aux;
         }
 
         private char _sprite = ' ';
-        private bool _isSolid;
         private ConsoleColor _color;
+        private bool _isSolid;
     }
 }
