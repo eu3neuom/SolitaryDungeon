@@ -14,6 +14,7 @@ namespace SolitaryDungeon
             Console.CursorVisible = false;
 
             Level lvl1 = new Level(20, 20);
+            Game.CurentLevel = lvl1;
             Player p = new Player(lvl1, 3, 3);
             while (true)
             {
