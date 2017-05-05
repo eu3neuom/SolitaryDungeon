@@ -35,6 +35,11 @@ namespace SolitaryDungeon
             Draw();
         }
 
+        public bool CheckCollision(int Xposition, int Yposition)
+        {
+            return map[Yposition, Xposition].IsSolid;
+        }
+
         private void InitializeMap()
         {
             map = new Tile[height, width];
