@@ -11,6 +11,7 @@ namespace SolitaryDungeon
         protected Character(Level Level, int Xposition, int Yposition, ConsoleColor Color)
         {
             level = Level;
+            level.Characters.Add(this);
             _xPos = Xposition;
             _yPos = Yposition;
             _oxPos = Xposition;
@@ -60,30 +61,17 @@ namespace SolitaryDungeon
 
         public void Update()
         {
-            Clear();
             ExecuteBehaviour();
-            Draw();
         }
 
         protected abstract void ExecuteBehaviour();
 
-        private void Draw()
+        public void Draw()
         {
             ConsoleColor aux = Console.ForegroundColor;
             Console.ForegroundColor = _color;
-            Console.SetCursorPosition(_xPos, _yPos);
             Console.Write(_sprite);
-            /*
-            Console.SetCursorPosition(_oxPos, _oyPos);
-            Console.Write('░');
-            */
             Console.ForegroundColor = aux;
-        }
-
-        private void Clear()
-        {
-            Console.SetCursorPosition(_xPos, _yPos);
-            Console.Write(' ');
         }
 
         protected void Move(Direction Direction)
