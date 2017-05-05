@@ -91,25 +91,25 @@ namespace SolitaryDungeon
             switch(Direction)
             {
                 case Direction.Up:
-                    if (!level.CheckCollision(_xPos, _yPos))
+                    if (!level.CheckCollision(_xPos, _yPos - 1))
                         --_yPos;
                     _oyPos = _yPos - 1;
                     _oxPos = _xPos;
                     break;
                 case Direction.Down:
-                    if (!level.CheckCollision(_xPos, _yPos))
+                    if (!level.CheckCollision(_xPos, _yPos + 1))
                         ++_yPos;
                     _oyPos = _yPos + 1;
                     _oxPos = _xPos;
                     break;
                 case Direction.Left:
-                    if (!level.CheckCollision(_xPos, _yPos))
+                    if (!level.CheckCollision(_xPos - 1, _yPos))
                         --_xPos;
                     _oxPos = _xPos - 1;
                     _oyPos = _yPos;
                     break;
                 case Direction.Right:
-                    if (!level.CheckCollision(_xPos, _yPos))
+                    if (!level.CheckCollision(_xPos + 1, _yPos))
                         ++_xPos;
                     _oxPos = _xPos + 1;
                     _oyPos = _yPos;
