@@ -8,7 +8,7 @@ namespace SolitaryDungeon
 {
     class Player : Character
     {
-        public Player(int Xposition, int Yposition) : base(Xposition, Yposition, ConsoleColor.White) { }
+        public Player(Level Level, int Xposition, int Yposition) : base(Level, Xposition, Yposition, ConsoleColor.White) { }
 
         protected override void ExecuteBehaviour()
         {
