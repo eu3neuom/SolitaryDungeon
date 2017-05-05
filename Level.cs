@@ -16,6 +16,8 @@ namespace SolitaryDungeon
             GenerateRoom(0, 0);
         }
 
+        #region Properties
+
         public int Width
         {
             get { return width; }
@@ -24,6 +26,13 @@ namespace SolitaryDungeon
         public int Height
         {
             get { return height; }
+        }
+
+        #endregion
+
+        public void Update()
+        {
+            Draw();
         }
 
         private void InitializeMap()
@@ -40,9 +49,19 @@ namespace SolitaryDungeon
             map[Yposition, Xposition + Width] = new Wall(Wall.Sprite.TopRight);
             map[Yposition + Height, Xposition] = new Wall(Wall.Sprite.BotLeft);
             map[Yposition + Height, Xposition + Width] = new Wall(Wall.Sprite.BotRight);
+            for (int i = Yposition + 1; i < Yposition + Width; ++i)
+            {
+                map[i, Xposition] = new Wall(Wall.Sprite.Vertical);
+                map[i, Xposition + Width] = new Wall(Wall.Sprite.Vertical);
+            }
+            for (int j = Xposition + 1; j < Xposition + Height; ++j)
+            {
+                map[Yposition, j] = new Wall(Wall.Sprite.Horizontal);
+                map[Yposition + Height, j] = new Wall(Wall.Sprite.Horizontal);
+            }
         }
 
-        public void Draw()
+        private void Draw()
         {
             for (int i = 0; i < height; i++)
             {
@@ -52,7 +71,12 @@ namespace SolitaryDungeon
             }
         }
 
+        #region Fields
+
         private int width, height;
         private Tile[,] map;
+        private List<Character> characters;
+
+        #endregion
     }
 }
