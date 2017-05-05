@@ -20,6 +20,8 @@ namespace SolitaryDungeon
             return new Tile(' ', Console.ForegroundColor, false);
         }
 
+        #region Properties
+
         public bool IsSolid
         {
             get { return _isSolid; }
@@ -32,6 +34,8 @@ namespace SolitaryDungeon
             protected set { _color = value; }
         }
 
+        #endregion
+
         protected virtual void ExecuteBehaviour() { }
 
         public void Draw()
@@ -42,8 +46,12 @@ namespace SolitaryDungeon
             Console.ForegroundColor = aux;
         }
 
-        private char _sprite = ' ';
+        #region Fields
+
+        private char _sprite;
         private ConsoleColor _color;
         private bool _isSolid;
+
+        #endregion
     }
 }
