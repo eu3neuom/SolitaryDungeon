@@ -14,6 +14,7 @@ namespace SolitaryDungeon
             height = Height;
             InitializeMap();
             GenerateRoom(0, 0);
+            characters = new List<Character>();
         }
 
         #region Properties
@@ -28,11 +29,26 @@ namespace SolitaryDungeon
             get { return height; }
         }
 
+        public Tile[,] Map
+        {
+            get { return map; }
+        }
+
+        public List<Character> Characters
+        {
+            get { return characters; }
+        }
+
+        public Player Player
+        {
+            get { return (Player)characters[0]; }
+        }
+
         #endregion
 
         public void Update()
         {
-            Draw();
+
         }
 
         public bool CheckCollision(int Xposition, int Yposition)
@@ -63,18 +79,6 @@ namespace SolitaryDungeon
             {
                 map[Yposition, j] = new Wall(Wall.Sprite.Horizontal);
                 map[Yposition + Height, j] = new Wall(Wall.Sprite.Horizontal);
-            }
-        }
-
-        private void Draw()
-        {
-            // temporary fix, will replace with camera
-            Console.SetCursorPosition(0, 0);
-            for (int i = 0; i < height; i++)
-            {
-                for (int j = 0; j < width; j++)
-                    map[i, j].Draw();
-                Console.Write('\n');
             }
         }
 
