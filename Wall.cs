@@ -8,7 +8,7 @@ namespace SolitaryDungeon
 {
     class Wall : Tile
     {
-        public Wall(char Sprite) : base(Sprite, ConsoleColor.White, true) { }
+        public Wall(char Sprite) : base(Sprite, ConsoleColor.Gray, true) { }
 
         public struct Sprite
         {
