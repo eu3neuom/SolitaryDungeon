@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace SolitaryDungeon
 {
@@ -10,8 +11,16 @@ namespace SolitaryDungeon
     {
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
+
             Level lvl1 = new Level(20, 20);
-            lvl1.Draw();
+            Player p = new Player(3, 3);
+            while (true)
+            {
+                Thread.Sleep(16);
+                lvl1.Update();
+                p.Update();
+            }
             Console.ReadKey();
         }
     }
