@@ -21,23 +21,25 @@ namespace SolitaryDungeon
                     case ConsoleKey.UpArrow:
                         Sprite = '▲';
                         Move(Direction.Up);
-                        break;
+                        goto default;
                     case ConsoleKey.S:
                     case ConsoleKey.DownArrow:
                         Sprite = '▼';
                         Move(Direction.Down);
-                        break;
+                        goto default;
                     case ConsoleKey.A:
                     case ConsoleKey.LeftArrow:
                         Sprite = '◄';
                         Move(Direction.Left);
-                        break;
+                        goto default;
                     case ConsoleKey.D:
                     case ConsoleKey.RightArrow:
                         Sprite = '►';
                         Move(Direction.Right);
+                        goto default;
+                    default:
+                        Camera.Render();
                         break;
-                    default: break;
                 }
             }
         }
