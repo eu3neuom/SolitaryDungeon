@@ -8,8 +8,9 @@ namespace SolitaryDungeon
 {
     abstract class Character
     {
-        protected Character(int Xposition, int Yposition, ConsoleColor Color)
+        protected Character(Level Level, int Xposition, int Yposition, ConsoleColor Color)
         {
+            level = Level;
             _xPos = Xposition;
             _yPos = Yposition;
             _oxPos = Xposition;
@@ -72,6 +73,10 @@ namespace SolitaryDungeon
             Console.ForegroundColor = _color;
             Console.SetCursorPosition(_xPos, _yPos);
             Console.Write(_sprite);
+            /*
+            Console.SetCursorPosition(_oxPos, _oyPos);
+            Console.Write('░');
+            */
             Console.ForegroundColor = aux;
         }
 
@@ -86,20 +91,28 @@ namespace SolitaryDungeon
             switch(Direction)
             {
                 case Direction.Up:
-                    --_yPos;
-                    --_oyPos;
+                    if (!level.CheckCollision(_xPos, _yPos))
+                        --_yPos;
+                    _oyPos = _yPos - 1;
+                    _oxPos = _xPos;
                     break;
                 case Direction.Down:
-                    ++_yPos;
-                    ++_oyPos;
+                    if (!level.CheckCollision(_xPos, _yPos))
+                        ++_yPos;
+                    _oyPos = _yPos + 1;
+                    _oxPos = _xPos;
                     break;
                 case Direction.Left:
-                    --_xPos;
-                    --_oxPos;
+                    if (!level.CheckCollision(_xPos, _yPos))
+                        --_xPos;
+                    _oxPos = _xPos - 1;
+                    _oyPos = _yPos;
                     break;
                 case Direction.Right:
-                    ++_xPos;
-                    ++_oxPos;
+                    if (!level.CheckCollision(_xPos, _yPos))
+                        ++_xPos;
+                    _oxPos = _xPos + 1;
+                    _oyPos = _yPos;
                     break;
                 default: break;
             }
@@ -115,6 +128,7 @@ namespace SolitaryDungeon
 
         #region Fields
 
+        private Level level;
         private int _xPos, _yPos, _oxPos, _oyPos;
         private ConsoleColor _color;
         private char _sprite;
