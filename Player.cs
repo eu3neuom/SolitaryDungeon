@@ -40,7 +40,7 @@ namespace SolitaryDungeon
                     default:
                         Camera.Render();
                         break;
-                }
+                } 
             }
         }
     }
