@@ -20,14 +20,14 @@
   <Class Name="SolitaryDungeon.Level">
     <Position X="8.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAEAAABBAAABQAQAAAAEAAAAABAACAAQAAAQIAAAA=</HashCode>
+      <HashCode>AAQAEAAABBAAABQAQAAAAEAAIAABAACAAQAAAQIAAAA=</HashCode>
       <FileName>Level.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SolitaryDungeon.Tile">
     <Position X="4.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAgAAAAIAAAAAAAAAAgAAAAEAgAAAACA=</HashCode>
+      <HashCode>AAAAAAAAAAAIAgAAAAIAAAAAAAAAAgAQAAEAgAAAACA=</HashCode>
       <FileName>Tile.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -37,7 +37,7 @@
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Struct Name="SolitaryDungeon.Wall.Sprite" Collapsed="true">
+      <Struct Name="SolitaryDungeon.Wall.Sprites" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Wall.cs</NewMemberFileName>
         </TypeIdentifier>
@@ -74,6 +74,23 @@
     <TypeIdentifier>
       <HashCode>AEQAAAAAJACAAAAAAAAAAEAAABgAAAAACAAAAAAAAAA=</HashCode>
       <FileName>InGameMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SolitaryDungeon.Door">
+    <Position X="6.25" Y="2.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="SolitaryDungeon.Door.Sprites" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Door.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Door.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="SolitaryDungeon.Direction">
