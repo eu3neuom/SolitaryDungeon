@@ -42,7 +42,6 @@ namespace SolitaryDungeon
                         Move(Direction.Right);
                         goto default;
                     default:
-                        Level.Update();
                         Camera.Render();
                         break;
                 } 
