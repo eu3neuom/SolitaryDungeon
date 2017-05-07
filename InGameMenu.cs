@@ -27,7 +27,7 @@ namespace SolitaryDungeon
         public static void Update()
         {
             DrawBorder();
-            //UpdateLog();
+            UpdateLog();
         }
 
         public static void Log(string LogString)
