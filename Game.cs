@@ -17,8 +17,10 @@ namespace SolitaryDungeon
             Console.BufferHeight = 31;
             Console.WindowWidth = 100;
             Console.BufferWidth = 100;
-            Camera.RenderHeight = 31;
-            Camera.RenderWidth = 41;
+            Camera.RenderHeight = Console.WindowHeight;
+            Camera.RenderWidth = 71;
+            InGameMenu.Height = Console.WindowHeight;
+            InGameMenu.Width = Console.WindowWidth - Camera.RenderWidth;
         }
     }
 }
