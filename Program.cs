@@ -20,7 +20,6 @@ namespace SolitaryDungeon
                 Thread.Sleep(16);
                 p.Update();
             }
-            //Console.ReadKey();
         }
     }
 }
