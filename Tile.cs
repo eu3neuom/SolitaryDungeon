@@ -15,11 +15,6 @@ namespace SolitaryDungeon
             _isSolid = IsSolid;
         }
 
-        public static Tile Empty()
-        {
-            return new Tile(' ', Console.ForegroundColor, false);
-        }
-
         #region Properties
 
         public bool IsSolid
@@ -34,9 +29,20 @@ namespace SolitaryDungeon
             protected set { _color = value; }
         }
 
+        public char Sprite
+        {
+            get { return _sprite; }
+            protected set { _sprite = value; }
+        }
+
         #endregion
 
-        protected virtual void ExecuteBehaviour() { }
+        public static Tile Empty()
+        {
+            return new Tile(' ', Console.ForegroundColor, false);
+        }
+
+        public virtual void ExecuteBehaviour() { }
 
         public void Draw()
         {
