@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SolitaryDungeon.Character">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="1.75" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -11,28 +11,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SolitaryDungeon.Player">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="2.25" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SolitaryDungeon.Level">
-    <Position X="7.5" Y="0.5" Width="1.5" />
+    <Position X="8.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAEAAABBAAABQAQAAAAEAAAAABAACAAQAAAQIAAAA=</HashCode>
       <FileName>Level.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SolitaryDungeon.Tile">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="4.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAIAgAAAAIAAAAAAAAAAgAAAAEAgAAAACA=</HashCode>
       <FileName>Tile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SolitaryDungeon.Wall">
-    <Position X="5.75" Y="0.5" Width="1.5" />
+    <Position X="6.25" Y="0.5" Width="1.75" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -49,28 +49,35 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SolitaryDungeon.Game">
-    <Position X="11" Y="0.5" Width="1.5" />
+    <Position X="12" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SolitaryDungeon.Camera">
-    <Position X="9.25" Y="0.5" Width="1.5" />
+    <Position X="10.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAQAAAEAAAAAAAAAAAAAACAgBAAAAAAABA=</HashCode>
       <FileName>Camera.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SolitaryDungeon.Program">
-    <Position X="11" Y="5.75" Width="1.5" />
+    <Position X="12" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="SolitaryDungeon.InGameMenu">
+    <Position X="10.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAJACAAAAAAAAAAEAAABgAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>InGameMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="SolitaryDungeon.Direction">
-    <Position X="0.5" Y="5.75" Width="1.5" />
+    <Position X="0.5" Y="5.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
       <FileName>Direction.cs</FileName>
