@@ -8,9 +8,9 @@ namespace SolitaryDungeon
 {
     class Wall : Tile
     {
-        public Wall(char Sprite) : base(Sprite, ConsoleColor.Gray, true) { }
+        public Wall(char Sprite) : base(Sprite, ConsoleColor.DarkGray, true) { }
 
-        public struct Sprite
+        public struct Sprites
         {
             public const char TopLeft = '╔';
             public const char TopRight = '╗';
