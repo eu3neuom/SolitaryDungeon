@@ -12,7 +12,7 @@ namespace SolitaryDungeon
         static void Main(string[] args)
         {
             Game.Initialize();
-            Level lvl1 = new Level(50, 50);
+            Level lvl1 = new Level(20, 20);
             Game.CurentLevel = lvl1;
             Player p = new Player(lvl1, 3, 3);
 
