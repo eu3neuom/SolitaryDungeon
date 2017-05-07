@@ -106,14 +106,6 @@ namespace SolitaryDungeon
             }
         }
 
-        protected enum Direction
-        {
-            Up,
-            Down,
-            Left,
-            Right
-        }
-
         #region Fields
 
         private Level level;
