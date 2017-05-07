@@ -12,6 +12,7 @@ namespace SolitaryDungeon
         {
             Sprite = '☻';
             Camera.Render();
+            InGameMenu.Update();
         }
 
         protected override void ExecuteBehaviour()
@@ -43,6 +44,8 @@ namespace SolitaryDungeon
                         goto default;
                     default:
                         Camera.Render();
+                        InGameMenu.Update();
+                        Level.Update();
                         break;
                 } 
             }
