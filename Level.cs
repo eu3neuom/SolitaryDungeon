@@ -13,7 +13,8 @@ namespace SolitaryDungeon
             width = Width;
             height = Height;
             InitializeMap();
-            GenerateRoom(0, 0);
+            GenerateRoom(0, 0, Width, Height);
+            //map[4, 2] = new Door(Door.Sprites.Horizontal, false);
             characters = new List<Character>();
         }
 
@@ -57,6 +58,11 @@ namespace SolitaryDungeon
             return map[Yposition, Xposition].IsSolid;
         }
 
+        public void Interact(int Xposition, int Yposition)
+        {
+            map[Yposition, Xposition].ExecuteBehaviour();
+        }
+
         private void InitializeMap()
         {
             map = new Tile[height, width];
@@ -67,19 +73,19 @@ namespace SolitaryDungeon
 
         private void GenerateRoom(int Xposition, int Yposition, int Width = 5, int Height = 5)
         {
-            map[Yposition, Xposition] = new Wall(Wall.Sprite.TopLeft);
-            map[Yposition, Xposition + Width] = new Wall(Wall.Sprite.TopRight);
-            map[Yposition + Height, Xposition] = new Wall(Wall.Sprite.BotLeft);
-            map[Yposition + Height, Xposition + Width] = new Wall(Wall.Sprite.BotRight);
-            for (int i = Yposition + 1; i < Yposition + Width; ++i)
+            map[Yposition, Xposition] = new Wall(Wall.Sprites.TopLeft);
+            map[Yposition, Xposition + Width - 1] = new Wall(Wall.Sprites.TopRight);
+            map[Yposition + Height - 1, Xposition] = new Wall(Wall.Sprites.BotLeft);
+            map[Yposition + Height - 1, Xposition + Width - 1] = new Wall(Wall.Sprites.BotRight);
+            for (int i = Yposition + 1; i < Yposition + Width - 1; ++i)
             {
-                map[i, Xposition] = new Wall(Wall.Sprite.Vertical);
-                map[i, Xposition + Width] = new Wall(Wall.Sprite.Vertical);
+                map[i, Xposition] = new Wall(Wall.Sprites.Vertical);
+                map[i, Xposition + Width - 1] = new Wall(Wall.Sprites.Vertical);
             }
-            for (int j = Xposition + 1; j < Xposition + Height; ++j)
+            for (int j = Xposition + 1; j < Xposition + Height - 1; ++j)
             {
-                map[Yposition, j] = new Wall(Wall.Sprite.Horizontal);
-                map[Yposition + Height, j] = new Wall(Wall.Sprite.Horizontal);
+                map[Yposition, j] = new Wall(Wall.Sprites.Horizontal);
+                map[Yposition + Height - 1, j] = new Wall(Wall.Sprites.Horizontal);
             }
         }
 
