@@ -42,6 +42,9 @@ namespace SolitaryDungeon
                         Sprite = '►';
                         Move(Direction.Right);
                         goto default;
+                    case ConsoleKey.E:
+                        Level.Interact(Xorient, Yorient);
+                        goto default;
                     default:
                         Camera.Render();
                         InGameMenu.Update();
