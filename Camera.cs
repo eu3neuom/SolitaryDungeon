@@ -8,6 +8,8 @@ namespace SolitaryDungeon
 {
     static class Camera
     {
+        #region Properties
+
         public static int RenderWidth
         {
             get { return _renderWidth; }
@@ -27,6 +29,8 @@ namespace SolitaryDungeon
             }
         }
 
+        #endregion
+
         public static void Render()
         {
             Console.Clear();
@@ -44,6 +48,10 @@ namespace SolitaryDungeon
             Game.CurentLevel.Player.Draw();
         }
 
+        #region Fields
+
         private static int _renderWidth, _renderHeight, _xCenter, _yCenter;
+
+        #endregion
     }
 }
