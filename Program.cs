@@ -19,7 +19,6 @@ namespace SolitaryDungeon
             {
                 Thread.Sleep(16);
                 p.Update();
-                //Camera.Render();
             }
             //Console.ReadKey();
         }
