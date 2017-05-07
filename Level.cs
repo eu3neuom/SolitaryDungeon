@@ -48,7 +48,8 @@ namespace SolitaryDungeon
 
         public void Update()
         {
-
+            for (int i = 1; i < characters.Count; ++i)
+                characters[i].Update();
         }
 
         public bool CheckCollision(int Xposition, int Yposition)
