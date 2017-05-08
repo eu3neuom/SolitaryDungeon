@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SolitaryDungeon
 {
@@ -10,90 +6,89 @@ namespace SolitaryDungeon
     {
         public Level(int Width, int Height)
         {
-            width = Width;
-            height = Height;
+            _width = Width;
+            _height = Height;
             InitializeMap();
             GenerateRoom(0, 0, Width, Height);
-            //map[4, 2] = new Door(Door.Sprites.Horizontal, false);
-            characters = new List<Character>();
+            _characters = new List<Character>();
         }
 
         #region Properties
 
         public int Width
         {
-            get { return width; }
+            get { return _width; }
         }
 
         public int Height
         {
-            get { return height; }
+            get { return _height; }
         }
 
         public Tile[,] Map
         {
-            get { return map; }
+            get { return _map; }
         }
 
         public List<Character> Characters
         {
-            get { return characters; }
+            get { return _characters; }
         }
 
         public Player Player
         {
-            get { return (Player)characters[0]; }
+            get { return (Player)_characters[0]; }
         }
 
         #endregion
 
         public void Update()
         {
-            for (int i = 1; i < characters.Count; ++i)
-                characters[i].Update();
+            for (int i = 1; i < _characters.Count; ++i)
+                _characters[i].Update();
         }
 
         public bool CheckCollision(int Xposition, int Yposition)
         {
-            return map[Yposition, Xposition].IsSolid;
+            return _map[Yposition, Xposition].IsSolid;
         }
 
         public void Interact(int Xposition, int Yposition)
         {
-            map[Yposition, Xposition].ExecuteBehaviour();
+            _map[Yposition, Xposition].ExecuteBehaviour();
         }
 
         private void InitializeMap()
         {
-            map = new Tile[height, width];
-            for (int i = 0; i < height; i++)
-                for (int j = 0; j < width; j++)
-                    map[i, j] = Tile.Empty();
+            _map = new Tile[_height, _width];
+            for (int i = 0; i < _height; ++i)
+                for (int j = 0; j < _width; ++j)
+                    _map[i, j] = Tile.Empty();
         }
 
         private void GenerateRoom(int Xposition, int Yposition, int Width = 5, int Height = 5)
         {
-            map[Yposition, Xposition] = new Wall(Wall.Sprites.TopLeft);
-            map[Yposition, Xposition + Width - 1] = new Wall(Wall.Sprites.TopRight);
-            map[Yposition + Height - 1, Xposition] = new Wall(Wall.Sprites.BotLeft);
-            map[Yposition + Height - 1, Xposition + Width - 1] = new Wall(Wall.Sprites.BotRight);
+            _map[Yposition, Xposition] = new Wall(Wall.Type.TopLeft);
+            _map[Yposition, Xposition + Width - 1] = new Wall(Wall.Type.TopRight);
+            _map[Yposition + Height - 1, Xposition] = new Wall(Wall.Type.BotLeft);
+            _map[Yposition + Height - 1, Xposition + Width - 1] = new Wall(Wall.Type.BotRight);
             for (int i = Yposition + 1; i < Yposition + Width - 1; ++i)
             {
-                map[i, Xposition] = new Wall(Wall.Sprites.Vertical);
-                map[i, Xposition + Width - 1] = new Wall(Wall.Sprites.Vertical);
+                _map[i, Xposition] = new Wall(Wall.Type.Vertical);
+                _map[i, Xposition + Width - 1] = new Wall(Wall.Type.Vertical);
             }
             for (int j = Xposition + 1; j < Xposition + Height - 1; ++j)
             {
-                map[Yposition, j] = new Wall(Wall.Sprites.Horizontal);
-                map[Yposition + Height - 1, j] = new Wall(Wall.Sprites.Horizontal);
+                _map[Yposition, j] = new Wall(Wall.Type.Horizontal);
+                _map[Yposition + Height - 1, j] = new Wall(Wall.Type.Horizontal);
             }
         }
 
         #region Fields
 
-        private int width, height;
-        private Tile[,] map;
-        private List<Character> characters;
+        private int _width, _height;
+        private Tile[,] _map;
+        private List<Character> _characters;
 
         #endregion
     }
