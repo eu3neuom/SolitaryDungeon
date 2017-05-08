@@ -37,34 +37,33 @@ namespace SolitaryDungeon
 
         private static void DrawBorder()
         {
-            // ─,│,┌,┐,└,┘,├,┤,┬,┴,┼
-            Console.SetCursorPosition(Console.WindowWidth - _width, 0);
+            // ┌,─,│,┌,┐,└,┘,├,┤,┬,┴,┼
+            Console.SetCursorPosition(Console.WindowWidth - _width , 0);
             Console.Write('┌');
-            for (int i = 1; i <= _width - 2; ++i)
+            for (int i = 1; i < _width - 1; ++i)
                 Console.Write('─');
             Console.Write('┐');
-            for (int i = 1; i <= _height - 3; ++i)
+            for (int i = 1; i < _height - 2; ++i)
             {
                 Console.SetCursorPosition(Console.WindowWidth - _width, i);
                 Console.Write('│');
-                for (int j = 1; j <= _width - 2; j++)
-                {
+                for (int j = 1; j < _width - 1; ++j)
                     Console.Write(' ');
-                }
                 Console.Write('│');
             }
-            Console.SetCursorPosition(Console.WindowWidth - _width, _height - 2);
+
+
+                Console.SetCursorPosition(Console.WindowWidth - _width, _height - 2);
+            Console.Write('│');
+            for (int i = 1; i < _width - 2; ++i)
+                Console.Write(' ');
+            Console.Write('┌');
+            Console.Write('┘');
+            Console.SetCursorPosition(Console.WindowWidth - _width, _height - 1);
             Console.Write('└');
-            for (int i = 1; i <= _width - 2; ++i)
+            for (int i = 1; i < _width - 2; ++i)
                 Console.Write('─');
             Console.Write('┘');
-            Console.SetCursorPosition(Console.WindowWidth - _width, _height - 9);
-            Console.Write("├─LOG:");
-            for (int i = 1; i < _width - 6; i++)
-            {
-                Console.Write('─');
-            }
-            Console.Write('┤');
         }
 
         private static void UpdateLog()
