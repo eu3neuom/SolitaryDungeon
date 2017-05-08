@@ -52,8 +52,7 @@ namespace SolitaryDungeon
                 Console.Write('│');
             }
 
-
-                Console.SetCursorPosition(Console.WindowWidth - _width, _height - 2);
+            Console.SetCursorPosition(Console.WindowWidth - _width, _height - 2);
             Console.Write('│');
             for (int i = 1; i < _width - 2; ++i)
                 Console.Write(' ');
@@ -64,6 +63,14 @@ namespace SolitaryDungeon
             for (int i = 1; i < _width - 2; ++i)
                 Console.Write('─');
             Console.Write('┘');
+
+            Console.SetCursorPosition(Console.WindowWidth - _width, _height - 8);
+            Console.Write("├─LOG:");
+            for (int i = 1; i < _width - 6; i++)
+            {
+                Console.Write('─');
+            }
+            Console.Write('┤');
         }
 
         private static void UpdateLog()
@@ -72,7 +79,7 @@ namespace SolitaryDungeon
                 _events.Dequeue();
             for (int i = 0; i < _events.Count; i++)
             {
-                Console.SetCursorPosition(Console.WindowWidth - _width + 1, i + _height - 8);
+                Console.SetCursorPosition(Console.WindowWidth - _width + 1, i + _height - 7);
                 Console.Write(_events.ToArray()[i]);
             }
         }
