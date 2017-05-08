@@ -44,6 +44,14 @@ namespace SolitaryDungeon
                         Game.CurentLevel.Map[i, j].Draw();
                 }
             }
+
+            for (int i = 1; i < Game.CurentLevel.Characters.Count; ++i)
+            {
+                Console.SetCursorPosition(_xCenter - Game.CurentLevel.Player.Xpos + Game.CurentLevel.Characters[i].Xpos,
+                    _yCenter - Game.CurentLevel.Player.Ypos + Game.CurentLevel.Characters[i].Ypos);
+                    Game.CurentLevel.Characters[i].Draw();
+            }
+
             Console.SetCursorPosition(_xCenter, _yCenter);
             Game.CurentLevel.Player.Draw();
         }
