@@ -10,7 +10,7 @@ namespace SolitaryDungeon
     {
         public Zombie(Level Level, int Xposition, int Yposition) : base(Level, Xposition, Yposition, ConsoleColor.Green)
         {
-            Sprite = 'Z';
+            Sprite = '¶';
         }
 
         protected override void ExecuteBehaviour()
