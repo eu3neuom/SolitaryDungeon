@@ -28,8 +28,8 @@ If you would like to contribute to this project by modifying/adding to the progr
 5. Make your changes.
  * Avoid making changes to more files than necessary for your feature (i.e. refrain from combining your "real" pull request with incidental bug fixes). This will simplify the merging process and make your changes clearer.
 6. Commit your changes. From the command line:
- * `git add Assets/my-changed-file.cs`
- * `git add Assets/my-other-changed-file.cs`
+ * `git add my-changed-file.cs`
+ * `git add my-other-changed-file.cs`
  * `git commit -m "A descriptive commit message"`
 7. While you were working some other pull request might have gone in the breaks your stuff or vice versa. This can be a *merge conflict* but also conflicting game logic or code. Before you test, merge with master.
  * `git fetch upstream`

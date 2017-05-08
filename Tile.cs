@@ -15,12 +15,18 @@ namespace SolitaryDungeon
             _isSolid = IsSolid;
         }
 
+        protected Tile(ConsoleColor Color, bool IsSolid)
+        {
+            _color = Color;
+            _isSolid = IsSolid;
+        }
+
         #region Properties
 
-        public bool IsSolid
+        public char Sprite
         {
-            get { return _isSolid; }
-            protected set { _isSolid = value; }
+            get { return _sprite; }
+            protected set { _sprite = value; }
         }
 
         public ConsoleColor Color
@@ -29,10 +35,10 @@ namespace SolitaryDungeon
             protected set { _color = value; }
         }
 
-        public char Sprite
+        public bool IsSolid
         {
-            get { return _sprite; }
-            protected set { _sprite = value; }
+            get { return _isSolid; }
+            protected set { _isSolid = value; }
         }
 
         #endregion
@@ -54,7 +60,7 @@ namespace SolitaryDungeon
 
         #region Fields
 
-        private char _sprite;
+        private char _sprite = ' ';
         private ConsoleColor _color;
         private bool _isSolid;
 

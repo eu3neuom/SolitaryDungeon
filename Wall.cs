@@ -8,21 +8,56 @@ namespace SolitaryDungeon
 {
     class Wall : Tile
     {
-        public Wall(char Sprite) : base(Sprite, ConsoleColor.DarkGray, true) { }
-
-        public struct Sprites
+        public Wall(Type Type) : base(ConsoleColor.DarkGray, true)
         {
-            public const char TopLeft = '╔';
-            public const char TopRight = '╗';
-            public const char BotLeft = '╚';
-            public const char BotRight = '╝';
-            public const char Horizontal = '═';
-            public const char Vertical = '║';
-            public const char InterTop = '╩';
-            public const char InterBot = '╦';
-            public const char InterLeft = '╣';
-            public const char InterRight = '╠';
-            public const char Intersection = '╬';
+            switch (Type)
+            {
+                case Type.TopLeft:
+                    Sprite = '╔';
+                    break;
+                case Type.TopRight:
+                    Sprite = '╗';
+                    break;
+                case Type.BotLeft:
+                    Sprite = '╚';
+                    break;
+                case Type.BotRight:
+                    Sprite = '╝';
+                    break;
+                case Type.Horizontal:
+                    Sprite = '═';
+                    break;
+                case Type.Vertical:
+                    Sprite = '║';
+                    break;
+                case Type.InterTop:
+                    Sprite = '╩';
+                    break;
+                case Type.InterBot:
+                    Sprite = '╦';
+                    break;
+                case Type.InterLeft:
+                    Sprite = '╣';
+                    break;
+                case Type.InterRight:
+                    Sprite = '╠';
+                    break;
+                default: break;
+            }
+        }
+
+        public enum Type
+        {
+            TopLeft,
+            TopRight,
+            BotLeft,
+            BotRight,
+            Horizontal,
+            Vertical,
+            InterTop,
+            InterBot,
+            InterLeft,
+            InterRight
         }
     }
 }

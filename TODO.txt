@@ -2,9 +2,7 @@
 2. Add corridor generators
 3. Add Inner and Outer mode for room generation
 4. Eventualy move all spirte enum to their own file
-5. Fix camera problem on big map
-6. Try to fix lag on big map
-7. Fix camera
+5. Fix camera but where map won't render if the origin is of negative x
 
         private void GenerateHorizontalHallway(int Xorigin, int Yorigin, int Length, bool HasDoors)
         {
