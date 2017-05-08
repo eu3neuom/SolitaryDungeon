@@ -8,13 +8,22 @@ namespace SolitaryDungeon
 {
     class Door : Tile
     {
-        public Door(char Sprite, bool IsOpen) : base(Sprite, ConsoleColor.Gray, !IsOpen)
+        public Door(Type Type, bool IsOpen) : base(ConsoleColor.Gray, !IsOpen)
         {
-            auxSprite = Sprite;
+            switch (Type)
+            {
+                case Type.Horizontal:
+                    _auxSprite = '─';
+                    break;
+                case Type.Vertical:
+                    _auxSprite = '│';
+                    break;
+                default: break;
+            }
             if (IsOpen)
-                this.Sprite = ' ';
+                Sprite = ' ';
             else
-                this.Sprite = auxSprite;
+                Sprite = _auxSprite;
         }
 
         public override void ExecuteBehaviour()
@@ -28,17 +37,21 @@ namespace SolitaryDungeon
             else
             {
                 IsSolid = true;
-                Sprite = auxSprite;
+                Sprite = _auxSprite;
                 InGameMenu.Log("You closed a door.");
             }
         }
 
-        public struct Sprites
+        public enum Type
         {
-            public const char Horizontal = '─';
-            public const char Vertical = '│';
+            Horizontal,
+            Vertical
         }
 
-        private char auxSprite;
+    #region Fields
+
+        private char _auxSprite;
+
+    #endregion
     }
 }
