@@ -58,12 +58,12 @@
   <Class Name="SolitaryDungeon.Camera">
     <Position X="12" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAQAAAEAAAAAAAAAAAAAACAgBAAAAAAABA=</HashCode>
+      <HashCode>AAAAAABAAIAQAAAEAAAAAAAAAAAAAACAgBAAAAAAABA=</HashCode>
       <FileName>Camera.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SolitaryDungeon.Program">
-    <Position X="12" Y="5.25" Width="1.5" />
+    <Position X="12" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
@@ -100,8 +100,15 @@
       <FileName>Pathfinding.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="SolitaryDungeon.Zombie">
+    <Position X="2.25" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Zombie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="SolitaryDungeon.Direction" Collapsed="true">
-    <Position X="0.5" Y="5.75" Width="1.75" />
+    <Position X="0.5" Y="6" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
       <FileName>Direction.cs</FileName>
