@@ -36,11 +36,11 @@ namespace SolitaryDungeon
             ClearRenderArea();
             for (int i = 0; i < Game.CurentLevel.Height; ++i)
             {
-                if(_xCenter - Game.CurentLevel.Player.Xpos > 0 && _xCenter - Game.CurentLevel.Player.Xpos < _renderWidth 
-                   && _yCenter - Game.CurentLevel.Player.Ypos + i > 0 && _yCenter - Game.CurentLevel.Player.Ypos + i < _renderHeight)
+                if(_xCenter - Game.CurentLevel.Player.Xpos >= 0 && _xCenter - Game.CurentLevel.Player.Xpos < _renderWidth 
+                   && _yCenter - Game.CurentLevel.Player.Ypos + i >= 0 && _yCenter - Game.CurentLevel.Player.Ypos + i < _renderHeight)
                 {
                     Console.SetCursorPosition(_xCenter - Game.CurentLevel.Player.Xpos, _yCenter - Game.CurentLevel.Player.Ypos + i);
-                    for (int j = 0; j < Game.CurentLevel.Width; ++j)
+                    for (int j = 0; j < Game.CurentLevel.Width && j + _xCenter - Game.CurentLevel.Player.Xpos < _renderWidth; ++j)
                         Game.CurentLevel.Map[i, j].Draw();
                 }
             }
