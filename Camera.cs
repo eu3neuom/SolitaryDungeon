@@ -33,7 +33,7 @@ namespace SolitaryDungeon
 
         public static void Render()
         {
-            Console.Clear();
+            ClearRenderArea();
             for (int i = 0; i < Game.CurentLevel.Height; ++i)
             {
                 if(_xCenter - Game.CurentLevel.Player.Xpos > 0 && _xCenter - Game.CurentLevel.Player.Xpos < _renderWidth 
@@ -54,6 +54,18 @@ namespace SolitaryDungeon
 
             Console.SetCursorPosition(_xCenter, _yCenter);
             Game.CurentLevel.Player.Draw();
+        }
+
+        private static void ClearRenderArea()
+        {
+            for (int i = 0; i < _renderHeight ; ++i)
+            {
+                Console.SetCursorPosition(0, i);
+                for (int j = 0; j < _renderWidth; ++j)
+                {
+                    Console.Write(' ');
+                }
+            }
         }
 
         #region Fields
