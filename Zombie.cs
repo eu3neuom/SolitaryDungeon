@@ -17,7 +17,11 @@ namespace SolitaryDungeon
         {
             Player p = Level.Player;
             if (Pathfinding.IsNextTo(this, p))
-                p.TakeDamage(5);
+            {
+                int damage = new Random().Next(2, 5);
+                p.TakeDamage(damage);
+                InGameMenu.Log("You took " + damage + " from a zombie.");
+            }
             else
                 Move(Pathfinding.NextStep(Xpos, Ypos, p.Xpos, p.Ypos));
         }
