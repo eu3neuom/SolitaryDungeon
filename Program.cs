@@ -15,7 +15,7 @@ namespace SolitaryDungeon
             Level lvl1 = new Level(10, 10);
             Game.CurrentLevel = lvl1;
             Player p = new Player(lvl1, 3, 3);
-            Zombie z1 = new Zombie(lvl1, 8, 8);
+            Zombie z = new Zombie(lvl1, 8, 8);
 
             while (Game.IsAlive)
                 while (!Game.IsPaused)
