@@ -67,7 +67,13 @@ namespace SolitaryDungeon
                         // carpit
                         foreach (Character z in Level.Characters.ToArray())
                             if (z.GetType().Name == "Zombie" && z.Xpos == Xorient && z.Ypos == Yorient)
+                            {
                                 ((Zombie)z).TakeDamage(_damage);
+                                if(((Zombie)z).Health > 0)
+                                    InGameMenu.Log("Hit a zombie for 5 dmg");
+                                else if (((Zombie)z).Health == 0)
+                                    InGameMenu.Log("Killed a zombie");
+                            }
                         goto default;
                     default:
                         Level.Update();
