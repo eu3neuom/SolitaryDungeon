@@ -13,6 +13,14 @@ namespace SolitaryDungeon
             Sprite = '¶';
         }
 
+        // carpit
+        public void TakeDamage(int DamageValue)
+        {
+            _health -= DamageValue;
+            if (_health <= 0)
+                Level.Characters.Remove(this);
+        }
+
         protected override void ExecuteBehaviour()
         {
             Player p = Level.Player;
@@ -25,5 +33,11 @@ namespace SolitaryDungeon
             else
                 Move(Pathfinding.NextStep(Xpos, Ypos, p.Xpos, p.Ypos));
         }
+
+        #region Fields
+
+        private int _health = 10;
+
+        #endregion
     }
 }
