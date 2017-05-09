@@ -1,6 +1,7 @@
 ﻿1. Add corridor generators
 3. Eventualy move all spirte enum to their own file
 OPTIONAL: Add Inner and Outer mode for room generation
+Added new line for 100th commit YEY
 
         private void GenerateHorizontalHallway(int Xorigin, int Yorigin, int Length, bool HasDoors)
         {
