@@ -8,13 +8,38 @@ namespace SolitaryDungeon
 {
     static class Game
     {
-        public static Level CurentLevel { get; set; }
+        #region Properties
 
-        public static bool IsAlive { get; set; }
+        public static Level CurrentLevel
+        {
+            get { return _currentLevel; }
+            set { _currentLevel = value; }
+        }
+
+        public static bool IsAlive
+        {
+            get { return _isAlive; }
+            set
+            {
+                _isAlive = value;
+                if (!_isAlive)
+                    _isPaused = true;
+            }
+        }
+
+        public static bool IsPaused
+        {
+            get { return _isPaused; }
+            set { _isPaused = value; }
+        }
+
+        #endregion
 
         public static void Initialize()
         {
+            Console.Title = "Solidary Dungeon";
             IsAlive = true;
+            IsPaused = false;
             Console.CursorVisible = false;
             Console.WindowHeight = 31;
             Console.BufferHeight = 31;
@@ -25,5 +50,12 @@ namespace SolitaryDungeon
             InGameMenu.Height = Console.WindowHeight;
             InGameMenu.Width = Console.WindowWidth - Camera.RenderWidth;
         }
+
+        #region Fields
+
+        private static Level _currentLevel;
+        private static bool _isAlive, _isPaused;
+
+        #endregion
     }
 }
