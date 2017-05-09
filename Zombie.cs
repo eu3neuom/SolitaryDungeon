@@ -16,7 +16,10 @@ namespace SolitaryDungeon
         protected override void ExecuteBehaviour()
         {
             Player p = Level.Player;
-            Move(Pathfinding.NextStep(Xpos, Ypos, p.Xpos, p.Ypos));
+            if (Pathfinding.IsNextTo(this, p))
+                p.TakeDamage(5);
+            else
+                Move(Pathfinding.NextStep(Xpos, Ypos, p.Xpos, p.Ypos));
         }
     }
 }
