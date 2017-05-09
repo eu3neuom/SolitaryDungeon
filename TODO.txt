@@ -1,7 +1,8 @@
 ﻿1. Add corridor generators
+2. Fix carpeala
 3. Eventualy move all spirte enum to their own file
+4. Add music with beeps
 OPTIONAL: Add Inner and Outer mode for room generation
-Added new line for 100th commit YEY
 
         private void GenerateHorizontalHallway(int Xorigin, int Yorigin, int Length, bool HasDoors)
         {
