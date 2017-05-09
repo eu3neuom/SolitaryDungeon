@@ -27,6 +27,7 @@ namespace SolitaryDungeon
         public static void Update()
         {
             DrawBorder();
+            UpdatePlayerStats();
             UpdateLog();
         }
 
@@ -71,6 +72,16 @@ namespace SolitaryDungeon
                 Console.Write('─');
             }
             Console.Write('┤');
+        }
+
+        private static void UpdatePlayerStats()
+        {
+            Console.SetCursorPosition(Console.WindowWidth - _width + 1, 1);
+            Console.Write("HEALTH: ");
+            for (int i = 0; i < Game.CurentLevel.Player.Health; ++i)
+            {
+                Console.Write('▓');
+            }
         }
 
         private static void UpdateLog()
