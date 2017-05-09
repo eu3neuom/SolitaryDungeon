@@ -72,7 +72,7 @@ namespace SolitaryDungeon
 
         #region Fields
 
-        private int _health = 20;
+        private int _health = 18;
 
         #endregion
     }
