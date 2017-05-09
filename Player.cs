@@ -15,6 +15,22 @@ namespace SolitaryDungeon
             InGameMenu.Update();
         }
 
+        #region Properties
+
+        public int Health
+        {
+            get { return _health; }
+        }
+
+        #endregion
+
+        public void TakeDamage(int DamageValue)
+        {
+            _health -= DamageValue;
+            if (_health <= 0)
+                Game.IsAlive = false;
+        }
+
         protected override void ExecuteBehaviour()
         {
             if (Console.KeyAvailable)
@@ -46,12 +62,18 @@ namespace SolitaryDungeon
                         Level.Interact(Xorient, Yorient);
                         goto default;
                     default:
+                        Level.Update();
                         Camera.Render();
                         InGameMenu.Update();
-                        Level.Update();
                         break;
                 } 
             }
         }
+
+        #region Fields
+
+        private int _health = 20;
+
+        #endregion
     }
 }
