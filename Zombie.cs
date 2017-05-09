@@ -13,6 +13,15 @@ namespace SolitaryDungeon
             Sprite = '¶';
         }
 
+        #region Properties
+
+        public int Health
+        {
+            get { return _health; }
+        }
+
+        #endregion
+
         // carpit
         public void TakeDamage(int DamageValue)
         {
@@ -28,7 +37,7 @@ namespace SolitaryDungeon
             {
                 int damage = new Random().Next(2, 5);
                 p.TakeDamage(damage);
-                InGameMenu.Log("You took " + damage + " from a zombie.");
+                InGameMenu.Log("Took " + damage + " dmg from a zombie");
             }
             else
                 Move(Pathfinding.NextStep(Xpos, Ypos, p.Xpos, p.Ypos));
