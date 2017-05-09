@@ -1,8 +1,17 @@
 ﻿1. Add corridor generators
 2. Fix carpeala
+ - add proper Health and TakeDamage
+ - add proper Character proximity check
 3. Eventualy move all spirte enum to their own file
 4. Add music with beeps
 OPTIONAL: Add Inner and Outer mode for room generation
+
+PLANNED FEATURES:
+ - items
+ - multiple levels
+ - procedural generation
+ - music
+ - colors
 
         private void GenerateHorizontalHallway(int Xorigin, int Yorigin, int Length, bool HasDoors)
         {
