@@ -78,7 +78,7 @@ namespace SolitaryDungeon
         {
             Console.SetCursorPosition(Console.WindowWidth - _width + 1, 1);
             Console.Write("HEALTH: ");
-            for (int i = 0; i < Game.CurentLevel.Player.Health; ++i)
+            for (int i = 0; i < Game.CurrentLevel.Player.Health; ++i)
             {
                 Console.Write('▓');
             }
