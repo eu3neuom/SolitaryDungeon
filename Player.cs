@@ -11,6 +11,7 @@ namespace SolitaryDungeon
         public Player(Level Level, int Xposition, int Yposition) : base(Level, Xposition, Yposition, ConsoleColor.White)
         {
             Sprite = '☻';
+            //Menu.ShowIntro();
             Camera.Render();
             InGameMenu.Update();
         }
@@ -24,6 +25,7 @@ namespace SolitaryDungeon
 
         #endregion
 
+        // carpit
         public void TakeDamage(int DamageValue)
         {
             _health -= DamageValue;
@@ -61,6 +63,12 @@ namespace SolitaryDungeon
                     case ConsoleKey.E:
                         Level.Interact(Xorient, Yorient);
                         goto default;
+                    case ConsoleKey.Spacebar:
+                        // carpit
+                        foreach (Character z in Level.Characters.ToArray())
+                            if (z.GetType().Name == "Zombie" && z.Xpos == Xorient && z.Ypos == Yorient)
+                                ((Zombie)z).TakeDamage(_damage);
+                        goto default;
                     default:
                         Level.Update();
                         Camera.Render();
@@ -73,6 +81,7 @@ namespace SolitaryDungeon
         #region Fields
 
         private int _health = 18;
+        private int _damage = 5;
 
         #endregion
     }
