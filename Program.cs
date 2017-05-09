@@ -17,13 +17,13 @@ namespace SolitaryDungeon
             Player p = new Player(lvl1, 3, 3);
             Zombie z = new Zombie(lvl1, 8, 8);
 
-            while (Game.IsAlive)
+            Menu.Show();
+            while (!Game.IsAlive)
             {
                 Thread.Sleep(16);
                 p.Update();
             }
-            Console.SetCursorPosition(0, 0);
-            Console.Write("!TZEAPA!");
+
             Console.ReadKey();
         }
     }
