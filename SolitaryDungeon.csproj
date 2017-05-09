@@ -49,6 +49,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="InGameMenu.cs" />
     <Compile Include="Level.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Pathfinding.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
