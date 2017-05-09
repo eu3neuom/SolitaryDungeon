@@ -15,6 +15,13 @@ namespace SolitaryDungeon
             return false;
         }
 
+        public static bool IsNextTo(Character This, Character Target)
+        {
+            if (Math.Abs(This.Xpos - Target.Xpos) + Math.Abs(This.Ypos - Target.Ypos) == 1)
+                return true;
+            return false;
+        }
+
         public static Direction NextStep(int Xstart, int Ystart, int Xtarget, int Ytarget)
         {
             //reversing the input
