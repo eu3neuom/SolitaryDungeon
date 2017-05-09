@@ -10,8 +10,11 @@ namespace SolitaryDungeon
     {
         public static Level CurentLevel { get; set; }
 
+        public static bool IsAlive { get; set; }
+
         public static void Initialize()
         {
+            IsAlive = true;
             Console.CursorVisible = false;
             Console.WindowHeight = 31;
             Console.BufferHeight = 31;
