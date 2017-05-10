@@ -34,30 +34,30 @@ namespace SolitaryDungeon
         public static void Render()
         {
             ClearRenderArea();
-            for (int i = 0; i < Game.CurentLevel.Height; ++i)
+            for (int i = 0; i < Game.CurrentLevel.Height; ++i)
             {
-                if(_xCenter - Game.CurentLevel.Player.Xpos < _renderWidth 
-                   && _yCenter - Game.CurentLevel.Player.Ypos + i >= 0 && _yCenter - Game.CurentLevel.Player.Ypos + i < _renderHeight)
+                if(_xCenter - Game.CurrentLevel.Player.Xpos < _renderWidth 
+                   && _yCenter - Game.CurrentLevel.Player.Ypos + i >= 0 && _yCenter - Game.CurrentLevel.Player.Ypos + i < _renderHeight)
                 {
-                    int dif = _xCenter - Game.CurentLevel.Player.Xpos;
+                    int dif = _xCenter - Game.CurrentLevel.Player.Xpos;
                     int aux = 0;
                     if (dif < 0) aux = -dif;
 
-                    Console.SetCursorPosition(Math.Max(dif, 0), _yCenter - Game.CurentLevel.Player.Ypos + i);
-                    for (int j = aux; j < Game.CurentLevel.Width && j + _xCenter - Game.CurentLevel.Player.Xpos < _renderWidth; ++j)
-                        Game.CurentLevel.Map[i, j].Draw();
+                    Console.SetCursorPosition(Math.Max(dif, 0), _yCenter - Game.CurrentLevel.Player.Ypos + i);
+                    for (int j = aux; j < Game.CurrentLevel.Width && j + _xCenter - Game.CurrentLevel.Player.Xpos < _renderWidth; ++j)
+                        Game.CurrentLevel.Map[i, j].Draw();
                 }
             }
 
-            for (int i = 1; i < Game.CurentLevel.Characters.Count; ++i)
+            for (int i = 1; i < Game.CurrentLevel.Characters.Count; ++i)
             {
-                Console.SetCursorPosition(_xCenter - Game.CurentLevel.Player.Xpos + Game.CurentLevel.Characters[i].Xpos,
-                    _yCenter - Game.CurentLevel.Player.Ypos + Game.CurentLevel.Characters[i].Ypos);
-                    Game.CurentLevel.Characters[i].Draw();
+                Console.SetCursorPosition(_xCenter - Game.CurrentLevel.Player.Xpos + Game.CurrentLevel.Characters[i].Xpos,
+                    _yCenter - Game.CurrentLevel.Player.Ypos + Game.CurrentLevel.Characters[i].Ypos);
+                    Game.CurrentLevel.Characters[i].Draw();
             }
 
             Console.SetCursorPosition(_xCenter, _yCenter);
-            Game.CurentLevel.Player.Draw();
+            Game.CurrentLevel.Player.Draw();
         }
 
         private static void ClearRenderArea()

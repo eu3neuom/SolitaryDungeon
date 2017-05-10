@@ -1,8 +1,17 @@
-﻿1. Change back to enum when initialising Tiles
-2. Add corridor generators
-3. Add Inner and Outer mode for room generation
-4. Eventualy move all spirte enum to their own file
-5. Fix camera but where map won't render if the origin is of negative x
+﻿1. Add corridor generators
+2. Fix carpeala
+ - add proper Health and TakeDamage
+ - add proper Character proximity check
+3. Eventualy move all spirte enum to their own file
+4. Add music with beeps
+OPTIONAL: Add Inner and Outer mode for room generation
+
+PLANNED FEATURES:
+ - items
+ - multiple levels
+ - procedural generation
+ - music
+ - colors
 
         private void GenerateHorizontalHallway(int Xorigin, int Yorigin, int Length, bool HasDoors)
         {

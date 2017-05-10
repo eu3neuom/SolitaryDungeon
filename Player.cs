@@ -11,8 +11,26 @@ namespace SolitaryDungeon
         public Player(Level Level, int Xposition, int Yposition) : base(Level, Xposition, Yposition, ConsoleColor.White)
         {
             Sprite = '☻';
+            //Menu.ShowIntro();
             Camera.Render();
             InGameMenu.Update();
+        }
+
+        #region Properties
+
+        public int Health
+        {
+            get { return _health; }
+        }
+
+        #endregion
+
+        // carpit
+        public void TakeDamage(int DamageValue)
+        {
+            _health -= DamageValue;
+            if (_health <= 0)
+                Game.IsAlive = false;
         }
 
         protected override void ExecuteBehaviour()
@@ -45,13 +63,32 @@ namespace SolitaryDungeon
                     case ConsoleKey.E:
                         Level.Interact(Xorient, Yorient);
                         goto default;
+                    case ConsoleKey.Spacebar:
+                        // carpit
+                        foreach (Character z in Level.Characters.ToArray())
+                            if (z.GetType().Name == "Zombie" && z.Xpos == Xorient && z.Ypos == Yorient)
+                            {
+                                ((Zombie)z).TakeDamage(_damage);
+                                if(((Zombie)z).Health > 0)
+                                    InGameMenu.Log("Hit a zombie for 5 dmg");
+                                else if (((Zombie)z).Health == 0)
+                                    InGameMenu.Log("Killed a zombie");
+                            }
+                        goto default;
                     default:
+                        Level.Update();
                         Camera.Render();
                         InGameMenu.Update();
-                        Level.Update();
                         break;
                 } 
             }
         }
+
+        #region Fields
+
+        private int _health = 18;
+        private int _damage = 5;
+
+        #endregion
     }
 }

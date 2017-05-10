@@ -10,14 +10,22 @@ namespace SolitaryDungeon
     {
         private static bool InBoder(int x, int y)
         {
-            if (x >= 0 && y >= 0 && x < Game.CurentLevel.Width && y < Game.CurentLevel.Height)
+            if (x >= 0 && y >= 0 && x < Game.CurrentLevel.Width && y < Game.CurrentLevel.Height)
+                return true;
+            return false;
+        }
+
+        // carpeala
+        public static bool IsNextTo(Character This, Character Target)
+        {
+            if (Math.Abs(This.Xpos - Target.Xpos) + Math.Abs(This.Ypos - Target.Ypos) == 1)
                 return true;
             return false;
         }
 
         public static Direction NextStep(int Xstart, int Ystart, int Xtarget, int Ytarget)
         {
-            //reversing the input
+            // reversing the input
             Xstart += Ystart;
             Ystart = Xstart - Ystart;
             Xstart -= Ystart;
@@ -26,7 +34,7 @@ namespace SolitaryDungeon
             Ytarget = Xtarget - Ytarget;
             Xtarget -= Ytarget;
 
-            int[,] dp = new int[Game.CurentLevel.Width, Game.CurentLevel.Height];
+            int[,] dp = new int[Game.CurrentLevel.Width, Game.CurrentLevel.Height];
             int[] dx = {0, -1, 0, 1};
             int[] dy = {-1, 0, 1, 0};
 
@@ -49,7 +57,7 @@ namespace SolitaryDungeon
                     int ny = y + dy[i];
 
                     if (InBoder(nx, ny) == false) continue;
-                    if (Game.CurentLevel.Map[nx, ny].IsSolid == false && dp[nx, ny] == 0)
+                    if (Game.CurrentLevel.Map[nx, ny].IsSolid == false && dp[nx, ny] == 0)
                     {
                         dp[nx, ny] = dp[x, y] + 1;
                         qx.Enqueue(nx);
@@ -65,7 +73,7 @@ namespace SolitaryDungeon
                 int nx = Xstart + dx[i];
                 int ny = Ystart + dy[i];
 
-                if (InBoder(nx, ny) == true && Game.CurentLevel.Map[nx, ny].IsSolid == false && dp[nx, ny] < nextValue)
+                if (InBoder(nx, ny) == true && Game.CurrentLevel.Map[nx, ny].IsSolid == false && dp[nx, ny] < nextValue)
                 {
                     nextValue = dp[nx, ny];
                     dir = i;
